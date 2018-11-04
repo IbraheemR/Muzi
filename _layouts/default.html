@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en-US' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{site.title}} | {{page.title}}</title>
+
+  <link rel="shortcut icon" href="{{ site.favicon}}" type="image/x-icon">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  
+
+</head>
+<body>
+
+  <div class="space" id="logo">
+    <img src="{{ site.banner_logo }}" alt="{{ site.title }}">
+  </div>
+
+  <div class="space" id="title">
+    {{page.title}}
+    <div class="button" id="menu">&#9776;</div>
+    <div class="button" id="top">&#8963;</div>
+  </div>
+  <div class="space" id="menu">{%- include menu.html -%}</div>
+
+  <div class="space" id="content">
+      {%- if page.description -%}
+        <i>{{ page.description }}</i>
+        <hr>
+      {%- endif -%}
+
+      {{ content }}<br>
+    </div>
+</body>
+</html>

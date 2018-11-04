@@ -1,0 +1,202 @@
+@import 'normalize';
+@import 'variables';
+@import 'md-styles';
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700|PT+Serif|Chakra+Petch:500');
+
+@mixin large {
+  @media screen and (min-width: #{$large-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media screen and (max-width: #{$medium-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin smallmed {
+  @include small {@content;}
+  @include medium {@content;}
+}
+
+@mixin medlarge {
+  @include medium {@content;}
+  @include large {@content;}
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  position: relative;
+
+  grid-template-columns: 100vw;
+  grid-template-rows: $topbar-height $title-height 1fr;
+  grid-template-areas:
+    'logo'
+    'title'
+    'content';
+
+  @include medlarge {
+    grid-template-columns: $topbar-height 1fr;
+    grid-template-rows: $menu-height $title-height 1fr;
+    grid-template-areas:
+      'logo menu'
+      'logo title'
+      'content content';
+  }
+
+}
+
+.space {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background-color: black;
+
+  &#logo {
+    grid-area: logo;
+
+    background-color: $theme-color;
+
+    img {
+      margin: 0 auto;
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+
+    @include medlarge {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &#menu {
+    grid-area: menu;
+    color: $topbar-fg;
+    background-color: $topbar-bg;
+
+    width: calc(100vw - #{$topbar-height});
+    height: 100vh;
+    position: fixed;
+
+    padding: 0.5rem;
+    overflow: hidden;
+
+    @include small {
+      bottom: 0;
+      left: calc(-100vw + #{$title-height});
+    }
+
+    @include medlarge {
+      height: $menu-height;
+
+      top: 0;
+      left: $topbar-height;
+    }
+
+    .menuitem {
+      text-decoration: none;
+      color: white;
+
+      padding: 0 0 0 1em;
+
+      &:hover,
+      &:active {
+        color: $theme-color;
+      }
+
+      &.right {
+        float: right;
+        padding: 0 1em 0 0;
+      }
+    }
+
+  }
+
+  &#title {
+    grid-area: title;
+    color: $topbar-fg;
+    background-color: $topbar-bg;
+
+    width: 100vw;
+    height: $title-height;
+
+    padding: 1rem;
+    text-align: center;
+    font-size: 2rem;
+
+    position: -ms-sticky;
+    position: sticky;
+
+    top: 0;
+    left: 0;
+
+    .button {
+      @include small {
+        width: $title-height;
+        height: $title-height;
+        font-size: 3rem;
+        position: absolute;
+
+        &#menu {
+          top: 0;
+          left: 0;
+        }
+
+        &#top {
+          top: 0.7rem;
+          right: 0;
+        }
+
+        &:hover,
+        &:active {
+          color: $theme-color
+        }
+      }
+
+      @include medlarge {
+        display: none;
+      }
+    }
+
+    @include medlarge {
+      width: calc(100vw - #{$topbar-height});
+      position: fixed;
+      top: $menu-height;
+      left: $topbar-height;
+    }
+  }
+
+
+  &#content {
+    grid-area: content;
+    padding: 1rem;
+
+    @include medlarge {
+      border-left: $topbar-height solid black;
+    }
+
+    font-family: 'PT Serif', serif;
+    color: $content-fg;
+    background-color: $content-bg;
+  }
+}
