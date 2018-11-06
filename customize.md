@@ -1,6 +1,5 @@
 ---
 title: Customizing Muzi
-layout: page
 ---
 
 ## Recommended Stuff
