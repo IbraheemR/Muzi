@@ -1,17 +1,25 @@
-// Breakpoints
-$large-breakpoint: 64em !default;
-$medium-breakpoint: 42em !default;
-
 // Colors
-$theme-color: royalblue;
+$theme-color: royalblue !default;
 
-$topbar-fg: white;
-$topbar-bg: black;
+$topbar-fg: white !default;
+$topbar-bg: black !default;
 
-$content-fg: black;
-$content-bg: white;
+$content-fg: black !default;
+$content-bg: white !default;
+
+// Font stacks
+
+$header-font: 'Montserrat', sans-serif;
+$text-font: 'PT Serif', serif;
+$code-font: 'Chakra Petch', sans-serif;
+
+// Flow text variables
+$intervals: 20 !default;
+$interval-size: 600px / $intervals !default;
 
 // You probably shouldn't touch these but we're not stopping you :P
-$menu-height: 2rem;
-$title-height: 5rem;
-$topbar-height: calc(#{$menu-height} + #{$title-height});
+$menu-height: 2rem !default;
+$title-height: 5rem !default;
+$topbar-height: $menu-height + $title-height;
+
+

@@ -4,6 +4,10 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700|PT+Serif|Chakra+Petch:500');
 
+// Breakpoints
+$large-breakpoint: 64em !default;
+$medium-breakpoint: 42em !default;
+
 @mixin large {
   @media screen and (min-width: #{$large-breakpoint}) {
     @content;
@@ -46,7 +50,7 @@ body {
 
   position: relative;
 
-  grid-template-columns: 100vw;
+  grid-template-columns: 100%;
   grid-template-rows: $topbar-height $title-height 1fr;
   grid-template-areas:
     'logo'
@@ -64,15 +68,28 @@ body {
 
 }
 
+@mixin menu-transition {
+  &.menuopen {
+    margin-left: calc(100% - #{$title-height}); // Would 
+  }
+}
+
 .space {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $header-font;
   color: white;
   background-color: black;
+
+  // Transition for menu open
+  @include small {
+    transition: 0.5s margin-left;
+  }
 
   &#logo {
     grid-area: logo;
 
     background-color: $theme-color;
+
+    z-index: 100;
 
     img {
       margin: 0 auto;
@@ -94,16 +111,35 @@ body {
     color: $topbar-fg;
     background-color: $topbar-bg;
 
-    width: calc(100vw - #{$topbar-height});
+    width: calc(100% - #{$title-height});
     height: 100vh;
     position: fixed;
 
     padding: 0.5rem;
     overflow: hidden;
 
+    @include menu-transition;
+
     @include small {
-      bottom: 0;
-      left: calc(-100vw + #{$title-height});
+      top: 0;
+      left: calc(-100% + #{$title-height});
+
+      border-top: $topbar-height solid black;
+
+      .menuitem {
+        display: block;
+
+        font-size: 2rem;
+        padding: 1rem 0 1rem 1rem !important;
+
+        &.right {
+          float: left !important;
+          padding: 1rem 0 1rem 1rem !important;
+
+          position: absolute;
+          bottom: 0;
+        }
+      }
     }
 
     @include medlarge {
@@ -117,16 +153,15 @@ body {
       text-decoration: none;
       color: white;
 
-      padding: 0 0 0 1em;
+      padding: 0 0 0 1rem;
 
-      &:hover,
-      &:active {
+      &:hover {
         color: $theme-color;
       }
 
       &.right {
         float: right;
-        padding: 0 1em 0 0;
+        padding: 0 1rem 0 0;
       }
     }
 
@@ -137,7 +172,7 @@ body {
     color: $topbar-fg;
     background-color: $topbar-bg;
 
-    width: 100vw;
+    width: 100%;
     height: $title-height;
 
     padding: 1rem;
@@ -178,8 +213,12 @@ body {
       }
     }
 
+    @include small {
+      @include menu-transition;
+    }
+
     @include medlarge {
-      width: calc(100vw - #{$topbar-height});
+      width: calc(100% - #{$topbar-height});
       position: fixed;
       top: $menu-height;
       left: $topbar-height;
@@ -188,14 +227,19 @@ body {
 
 
   &#content {
+    font-family: $text-font;
+
     grid-area: content;
     padding: 1rem;
+
+    @include small {
+      @include menu-transition;
+    }
 
     @include medlarge {
       border-left: $topbar-height solid black;
     }
 
-    font-family: 'PT Serif', serif;
     color: $content-fg;
     background-color: $content-bg;
   }

@@ -4,17 +4,15 @@ description:  Page description appears here! This page demonstrates Muzi's featu
 layout: default
 ---
 
-Muzi is a theme for your Jekyll/Github Pages website. It of course supports all the standard markdown features:
+# Muzi is a mobile first theme for your Jekyll/Github Pages website
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+## [Add it](TODO link to readme.md) to your site today!
 
-[Checkout the customisation guide](/customize/).
+## Kramdown flavoured Markdown comes as standard
+
+Text can be **bold**, _italic_, or ~~strikethrough~~. You can link to stuff such as our [customisation guide](/customize/).
 
 Paragraphs are automatically created. Just sperate text by a blank line!
-
-# Header 1
-## Header 2
-### Header 3
 
 > This is a blockquote
 >
@@ -23,30 +21,39 @@ Paragraphs are automatically created. Just sperate text by a blank line!
 > A frog in a well does not know the great ocean
 
 
-Muzi comes with a 404 page for things that [don't exist](/this-doesnt-exist).
+## Flowtext & other cool things
 
-Syntax highlighting uses the Monokai theme
+Muzi automatically scales text based on the size of you screen for easier reading (_Shhhh we stole this from [Materialize](https://materializecss.com/typography.html#flow) but its MIT liscensed so its fine_)
+
+Muzi comes with a 404 page for things that [don't exist](/this-doesnt-exist)
+
+SEO stuff is all taken care of with the [Jekyll SEO tag](https://github.com/jekyll/jekyll-seo-tag)
+
+Serving cookies? Just enable this in [_config.yml](TODO link to custom guide)  
+Analytics? Just [give us](TODO link to custom guide) your tracking id and we'll get it sorted!
+
+## Some other markdown demos
 
 ```js
-// Code highlighting uses the Monokai themeby default.
-function fun(friends) {
-  return friends.map(friend => friend.partyMode())
+// Code highlighting uses the Monokai theme.
+function haveFun(friends) {
+  return friends.map(friend => friend.enterPartyMode())
 }
 ```
 
-#### Shopping List
+### Shopping List
 
 - Eggs  
 - Milk
 - Beans
 
-#### Todo
+### Todo
 
 1. Go to the shops
 2. Meet Jeg at 13:00
 3. Research octernions
 
-### Good restraunts in town
+### Some restraunts in town
 
 | Restraunt              | Distance | Rating |
 |:-----------------------|:---------|:-------|
@@ -77,5 +84,5 @@ function fun(friends) {
 </dl>
 
 ```
-Thanks Miller!
+P.S. Thanks Miller!
 ```

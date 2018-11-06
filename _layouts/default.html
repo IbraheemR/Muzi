@@ -6,15 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{site.title}} | {{page.title}}</title>
 
-  <link rel="shortcut icon" href="{{ site.favicon}}" type="image/x-icon">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   
+  <link rel="shortcut icon" href="{{ site.favicon | default: 'https://muzi.ibraheemrodrigues.com/assets/logo_black.png' }}" type="image/x-icon">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+
+  {% seo %}
 
 </head>
 <body>
 
   <div class="space" id="logo">
-    <img src="{{ site.banner_logo }}" alt="{{ site.title }}">
+    <img src="{{ site.banner_logo | default: 'https://muzi.ibraheemrodrigues.com/assets/logo_white.svg' }}" alt="{{ site.title }}">
   </div>
 
   <div class="space" id="title">
@@ -24,13 +28,15 @@
   </div>
   <div class="space" id="menu">{%- include menu.html -%}</div>
 
-  <div class="space" id="content">
-      {%- if page.description -%}
-        <i>{{ page.description }}</i>
-        <hr>
-      {%- endif -%}
+  <div class="space {% unless site.noflowtext %}flowtext{% endunless %}" id="content">
+    {%- if page.description -%}
+      <i>{{ page.description }}</i>
+      <hr>
+    {%- endif -%}
 
-      {{ content }}<br>
-    </div>
+    {{ content }}<br>
+  </div>
+
+  <script src="/assets/muzi.js"></script>
 </body>
 </html>

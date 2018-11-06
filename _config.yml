@@ -2,9 +2,6 @@
 title: Muzi
 description: Muzi is a theme for Jekyll/Github Pages distributed under the MIT license.
 
-banner_logo: /assets/logo_white.svg
-favicon: /assets/logo_black.png
-
 defaults:
   -
     scope:

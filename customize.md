@@ -1,4 +1,22 @@
 ---
-title: Customizing Mizo
+title: Customizing Muzi
+layout: page
 ---
-Hello world
+
+## Recommended Stuff
+
+### Page defaults
+
+## Logo
+
+## Menu
+
+## Theme colors
+
+## Cookie Consent
+
+## Google Analytics
+
+## Flow text
+
+## Adding your own styles

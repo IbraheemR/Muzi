@@ -1,7 +1,7 @@
 @import 'monokai';
 
 h1, h2, h3, h4, h5, h6, h7, h8 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: $header-font;
 }
 
 a {
@@ -14,7 +14,7 @@ img {
 }
 
 code {
-  font-family: 'Chakra Petch', sans-serif;
+  font-family: $code-font;
 }
 
 hr {
@@ -33,7 +33,7 @@ ol {
     margin-bottom: 5px;
 
     &::before {
-        font-family: 'Montserrat', sans-serif;
+        font-family: $header-font;
         color: $theme-color;
         margin-right: 0.5em;
         content: counter(item) ".";
@@ -50,7 +50,7 @@ ul {
     margin-bottom: 5px;
 
     &::before {
-        font-family: 'Montserrat', sans-serif;
+        font-family: $header-font;
         color: $theme-color;
         margin-right: 0.5em;
         content: "•";
@@ -60,8 +60,8 @@ ul {
 }
 
 dl {
-  dt {font-family: 'Montserrat', sans-serif;}
-  dd {font-family: 'Chakra Petch', sans-serif;}
+  dt {font-family: $header-font;}
+  dd {font-family: $code-font;}
 }
 
 blockquote {
@@ -79,5 +79,20 @@ th, td {
 
 th {
   border-bottom: 5px solid $theme-color;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $header-font;
+}
+
+.flowtext {
+  $i: 0;
+  @while $i <= $intervals {
+    @media only screen and (min-width : 360 + ($i * $interval-size)) {
+      font-size: 1.2rem * (1 + (.02 * $i));
+    }
+    $i: $i + 1;
+  }
+
+  // Handle below 360px screen
+  @media only screen and (max-width: 360px) {
+    font-size: 1.2rem;
+  }
 }
