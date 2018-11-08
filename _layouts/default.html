@@ -11,14 +11,36 @@
   <link rel="shortcut icon" href="{{ site.favicon | default: 'https://muzi.ibraheemrodrigues.com/assets/logo_black.png' }}" type="image/x-icon">
   <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
 
-
   {% seo %}
+
+  <!-- Cookie Consent -->
+  {%- if site.cookie_consent -%}
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+    <script>
+      window.addEventListener("load", function(){
+      window.cookieconsent.initialise({
+        "palette": {
+          "popup": {
+            "background": window.getComputedStyle(document.getElementById('title'))["background-color"] // Nab styles from elements
+          },
+          "button": {
+            "background": window.getComputedStyle(document.getElementById('logo'))["background-color"] // Nab styles from elements
+          }
+        },
+        "theme": "edgeless",
+        "content": {
+          "message": "{{site.cookie_message | default: 'This website uses cookies to ensure you get the best experience on our website.'}}"
+        }
+      })});
+    </script>
+  {%- endif -%}
 
 </head>
 <body>
 
   <div class="space" id="logo">
-    <img src="{{ site.banner_logo | default: 'https://muzi.ibraheemrodrigues.com/assets/logo_white.svg' }}" alt="{{ site.title }}">
+    <img src="{{ site.logo | default: 'https://muzi.ibraheemrodrigues.com/assets/logo_white.svg' }}" alt="{{ site.title }}">
   </div>
 
   <div class="space" id="title">

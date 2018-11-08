@@ -111,7 +111,7 @@ body {
     color: $topbar-fg;
     background-color: $topbar-bg;
 
-    width: calc(100% - #{$title-height});
+    width: calc(100% - #{$topbar-height});
     height: 100vh;
     position: fixed;
 
@@ -121,6 +121,8 @@ body {
     @include menu-transition;
 
     @include small {
+      width: calc(100% - #{$title-height});
+
       top: 0;
       left: calc(-100% + #{$title-height});
 

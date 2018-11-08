@@ -68,7 +68,7 @@ function haveFun(friends) {
 
 ## Public Enemy #1
 
-![Godzilla](https://images.pexels.com/photos/777122/pexels-photo-777122.jpeg?auto=compress&cs=tinysrgb&h=650&w=940)
+![Godzilla](/assets/zilla.jpeg)
 
 ### Known data:
 
