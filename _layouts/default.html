@@ -13,8 +13,9 @@
 
   {% seo %}
 
+  {%- if site.cookie_consent or site.analytics_id -%}
   <!-- Cookie Consent -->
-  {%- if site.cookie_consent -%}
+
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
     <script>
@@ -30,11 +31,24 @@
         },
         "theme": "edgeless",
         "content": {
-          "message": "{{site.cookie_message | default: 'This website uses cookies to ensure you get the best experience on our website.'}}"
+          "message": "{{site.cookie_message | default: 'This website uses cookies to ensure you get the best experience on our website.'}}",
+          "href": "{{site.cookie_link | default: 'https://cookiesandyou.com'}}"
         }
       })});
     </script>
   {%- endif -%}
+
+  {% if site.analytics_id %}
+  <!-- Google Analytics-->
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.analytics_id }}');
+    </script>
+  {% endif %}
 
 </head>
 <body>
