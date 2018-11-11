@@ -1,6 +1,7 @@
 ---
 title: Customizing Muzi
 permalink: /customize/
+redirect_from: /customisse/
 ---
 
 
@@ -23,6 +24,17 @@ Make sure no other `theme` or `remote_theme` value is set
 
 These are a few things we recommend you do to make Muzi easier to use
 
+### 2.1 `.gitignore`
+
+If you haven't got one already, we'd recommend you have a [`.gitignore`](https://help.github.com/articles/ignoring-files/) file to tell Git which files don't need to be in your site's repository:
+
+```
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+```
+
 ### 2.2 Page defaults
 
 By default Muzi only includes a `default` theme. To automatically use this for all your pages add the following links to your `_config.yml` file, or merge them with your [existing front matter defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/):
@@ -35,6 +47,7 @@ defaults:
     values:
       layout: "default"
 ```
+
 
 ## 3. Editing the Logo & Favicon
 
