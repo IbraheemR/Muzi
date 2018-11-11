@@ -25,7 +25,7 @@ These are a few things we recommend you do to make Muzi easier to use
 
 ### 2.2 Page defaults
 
-By default Muzi only includes a `default` theme. To automatically use this for all your pages add the following links to your `_config.yml` file, or merge them with your [excisting front matter defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/):
+By default Muzi only includes a `default` theme. To automatically use this for all your pages add the following links to your `_config.yml` file, or merge them with your [existing front matter defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/):
 
 ```yaml
 defaults:
@@ -41,11 +41,14 @@ defaults:
 - To edit the logo add the to the `/assets/` directory and define the following options in `_config.yml`:
 
 ```yaml
-logo: /assets/<your image>
+logo: /assets/<your logo>
+banner_logo: /assets/<your logo>
 favicon: /assets/<you favicon>
 ```
 
-- If you're sticking with the default high contrast theme, with a bold banner color we'd reccomend your logo image be white, with a transparent background and in vector format, and your favicon a black bitmap version (for browser compatibility).
+- `logo` is for SEO and should include your logo and a solid background, propably whatever you set as [the theme color](#5-adding-your-own-theme-colors-and-styles)
+- `banner_logo` is displayed on the page and should ideally be vector, white with a transparent background
+- `favicon` shoud be a bitmap in balck with a white background
 
 ## 4. Editing the Menu
 
@@ -66,11 +69,11 @@ To edit the menu override the `menu.html` include.
 
 <!-- Right (Bottom on mobile) aligned link -->
 <a href="{{destination page}}" class="menuitem right">{{link text}}</a>
-<a href="http://github.com/IbraheemR" class="menuitem right">My Github</a>
+<a href="http://github.com/IbraheemR" class="menuitem right">My GitHub</a>
 ```
 {% endraw %}
 
-  You do not need to specify any other html (`<html>`, `<head>`, `<body>`, etc.), only what is in th example above. Refer to the [source](https://github.com/IbraheemR/Muzi/blob/master/_includes/menu.html) for an example
+  You do not need to specify any other HTML (`<html>`, `<head>`, `<body>`, etc.), only what is in th example above. Refer to the [source](https://github.com/IbraheemR/Muzi/blob/master/_includes/menu.html) for an example
 
 ## 5. Adding your own theme colors and styles
 
@@ -95,13 +98,13 @@ To edit the menu override the `menu.html` include.
 
     {% endraw %}
 
-3. Add your desired new theme colors or other customisation variables (see [the source](https://github.com/IbraheemR/Muzi/blob/master/_sass/variables.scss) for help) below the two front matter lines and above the `@import` statement.
-    - We'd reccomend you choose a high saturation color for your theme color. `royalblue`, `red`, `violet` and `green` work well.
-4. Add you new styles or anything else (`@import` statements, minins, etc) below the `@import` statement. See the [SASS guide](https://sass-lang.com/guide) for help.
+3. Add your desired new theme colors or other customization variables (see [the source](https://github.com/IbraheemR/Muzi/blob/master/_sass/variables.scss) for help) below the two front matter lines and above the `@import` statement.
+    - We'd recommend you choose a high saturation color for your theme color. `royalblue`, `red`, `violet` and `green` work well.
+4. Add you new styles or anything else (`@import` statements, mixins, etc) below the `@import` statement. See the [SASS guide](https://sass-lang.com/guide) for help.
 
 ## 6. Cookie Consent
 
-If your site serves cookies to viewers in the EU, its a legal requirement that you notify your users of this ([see more](https://cookiesandyou.com/)). Muzi makes this easy for you, using the [cookie consent tool by Inistes](https://cookieconsent.insites.com/). Simply add the following line to your `_config.yml` file:
+If your site serves cookies to viewers in the EU, its a legal requirement that you notify your users of this ([see more](https://cookiesandyou.com/)). Muzi makes this easy for you, using the [cookie consent tool by Insites](https://cookieconsent.insites.com/). Simply add the following line to your `_config.yml` file:
 
 ```yaml
 cookie_consent: true

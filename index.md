@@ -4,15 +4,15 @@ description:  Page description appears here! This page demonstrates Muzi's featu
 layout: default
 ---
 
-# Muzi is a mobile first theme for your Jekyll/Github Pages website
+# Muzi is a mobile first theme for your Jekyll/GitHub Pages website
 
-## [Add it](TODO link to readme.md) to your site today!
+## [Add it](/customize/) to your site today!
 
-## Kramdown flavoured Markdown comes as standard
+## Kramdown flavored Markdown comes as standard
 
-Text can be **bold**, _italic_, or ~~strikethrough~~. You can link to stuff such as our [customisation guide](/customize/).
+Text can be **bold**, _italic_, or ~~strikethrough~~. You can link to stuff such as our [customization guide](/customize/).
 
-Paragraphs are automatically created. Just sperate text by a blank line!
+Paragraphs are automatically created. Just seperate text by a blank line!
 
 > This is a blockquote
 >
@@ -23,14 +23,14 @@ Paragraphs are automatically created. Just sperate text by a blank line!
 
 ## Flowtext & other cool things
 
-Muzi automatically scales text based on the size of you screen for easier reading (_Shhhh we stole this from [Materialize](https://materializecss.com/typography.html#flow) but its MIT liscensed so its fine_)
+Muzi automatically scales text based on the size of you screen for easier reading (_Shhhh we stole this from [Materialize](https://materializecss.com/typography.html#flow) but its MIT licensed so its fine_)
 
 Muzi comes with a 404 page for things that [don't exist](/this-doesnt-exist)
 
 SEO stuff is all taken care of with the [Jekyll SEO tag](https://github.com/jekyll/jekyll-seo-tag)
 
-Serving cookies? Just enable this in [_config.yml](TODO link to custom guide)  
-Analytics? Just [give us](TODO link to custom guide) your tracking id and we'll get it sorted!
+Serving cookies? Just enable this in [_config.yml](/customize/#6-cookie-consent)  
+Analytics? Just [give us](/customize/#7-google-analytics) your tracking id and we'll get it sorted!
 
 ## Some other markdown demos
 
@@ -53,13 +53,13 @@ function haveFun(friends) {
 2. Meet Jeg at 13:00
 3. Research octernions
 
-### Some restraunts in town
+### Some restaurants in town
 
-| Restraunt              | Distance | Rating |
+| Restaurant             | Distance | Rating |
 |:-----------------------|:---------|:-------|
 | The Wengo              | 3km      | 7      |
 | JEGGS the baker        | 4km      | 3      |
-| Tobuck Italian Quisine | 0.5km    | 5      |
+| Tobuck Italian Cuisine | 0.5km    | 5      |
 | Miller's Millet Mill   | 7km      | 9 but needs more millet|
 
 ### Let's divide things up with a horizontal rule

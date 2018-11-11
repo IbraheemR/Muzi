@@ -2,7 +2,7 @@
 
 [https://muzi.ibraheemrodirgues.com](https://muzi.ibraheemrodirgues.com)
 
-Muzi is a **mobile first** theme for your Jekyll/Github Pages website. It bundles everything you'd expect from any Jekyll website plus:
+Muzi is a **mobile first** theme for your Jekyll/GitHub Pages website. It bundles everything you'd expect from any Jekyll website plus:
 
 - Automatic SEO generation
 - Simple Cookie Consent & Google Analytics integration
@@ -17,7 +17,7 @@ Add the following line to your site's `_config.yml`:
 remote_theme: IbraheemR/Muzi
 ```
 
-Make sure there is not other `theme` or `remote_theme` value set.
+Make sure there is no other `theme` or `remote_theme` value set.
 
 ## Customixation
 
