@@ -5,9 +5,9 @@
 Muzi is a **mobile first** theme for your Jekyll/Github Pages website. It bundles everything you'd expect from any Jekyll website plus:
 
 - Automatic SEO generation
-- Simple Google Analytics integration
+- Simple Cookie Consent & Google Analytics integration
 - Ready built 404 page
-- [Flow text] as standard
+- [Flow text](https://materializecss.com/typography.html#flow) as standard
 
 ## Installation
 
