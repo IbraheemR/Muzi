@@ -8,16 +8,22 @@ redirect_from: /customisse/
 1. [Installing Muzi](#1-installing-muzi)
 2. [Recommended Stuff](#2-recommended-stuff)
 3. [Editing the Logo](#3-editing-the-logo)
-4. [Editing the Menu](#4-editing-the-menu)
-5. [Adding your own theme colors and styles](#5-adding-your-own-theme-colors-and-styles)
-6. [Cookie Consent](#6-cookie-consent)
-7. [Google Analytics](#7-google-analytics)
-8. [SEO](https://jekyll.github.io/jekyll-seo-tag/)
+4. [Editing the Menu & Footer](#4-editing-the-menu--footer)
+5. [Post Indexer Widget](#5-post-indexer-widget)
+6. [Adding your own theme colors and styles](#6-adding-your-own-theme-colors-and-styles)
+7. [Cookie Consent](#7-cookie-consent)
+8. [Google Analytics](#8-google-analytics)
+9. [SEO](https://jekyll.github.io/jekyll-seo-tag/)
 
 ## 1. Installing Muzi
 
-To install Muzi, simply add `remote_theme: IbraheemR/Muzi` to your `_config.yml` file
+To install Muzi, simply add
 
+```yaml
+remote_theme: IbraheemR/Muzi
+```
+
+to your `_config.yml` file.
 Make sure no other `theme` or `remote_theme` value is set
 
 ## 2. Recommended Stuff
@@ -37,7 +43,7 @@ _site/
 
 ### 2.2 Page defaults
 
-By default Muzi only includes a `default` theme. To automatically use this for all your pages add the following links to your `_config.yml` file, or merge them with your [existing front matter defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/):
+By default Muzi only includes a `default` theme. To automatically use this for all your pages add the following lines to your `_config.yml` file, or merge them with your [existing front matter defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/):
 
 ```yaml
 defaults:
@@ -63,9 +69,9 @@ favicon: /assets/<you favicon>
 - `banner_logo` is displayed on the page and should ideally be vector, white with a transparent background
 - `favicon` shoud be a bitmap in balck with a white background
 
-## 4. Editing the Menu
+## 4. Editing the Menu & Footer
 
-To edit the menu override the `menu.html` include. 
+### 4.1 To edit the menu override the `menu.html` include. 
 
 1. If you don't have one already create an `/_includes/` folder in your site's root.
 2. Create a file called `menu.html`
@@ -73,22 +79,63 @@ To edit the menu override the `menu.html` include.
 
 {% raw %}
 ```html
-
-<!-- Left (Top on mobile) aligned link -->
-<a href="{{destination page}}" class="menuitem">{{link text}}</a>
+<!-- Left (Top on mobile) aligned links -->
 <a href="/" class="menuitem">Home</a>
-<a href="/about/" class="menuitem">About</a>
+<a href="/blog/" class="menuitem">Blog</a>
+<a href="https://muzi.ibraheemrodrigues.com/customize/" class="menuitem">Customize</a>
+<a href="https://github.com/IbraheemR/Muzi" class="menuitem">GitHub</a>
 
-
-<!-- Right (Bottom on mobile) aligned link -->
-<a href="{{destination page}}" class="menuitem right">{{link text}}</a>
-<a href="http://github.com/IbraheemR" class="menuitem right">My GitHub</a>
+<!-- Right (Bottom on mobile) aligned links -->
+<span class="right">
+  <a href="https://ibraheemrodrigues.com" class="menuitem">by Ibraheem Rodrigues</a>
+  <a href="https://ibraheemrodrigues.com/donate" class="menuitem">Donate</a>
+</span>
 ```
 {% endraw %}
 
   You do not need to specify any other HTML (`<html>`, `<head>`, `<body>`, etc.), only what is in th example above. Refer to the [source](https://github.com/IbraheemR/Muzi/blob/master/_includes/menu.html) for an example
 
-## 5. Adding your own theme colors and styles
+### 4.2 To edit the footer override the `footer.html` include. 
+
+1. If you don't have one already create an `/_includes/` folder in your site's root.
+2. Create a file called `footer.html`
+3. Add your text in the following format
+
+{% raw %}
+```html
+<!-- Left aligned text -->
+<span class="left">
+  &copy; Ibraheem Rodrigues 2018
+</span>
+
+<!-- Right aligned text -->
+<span class="right">
+  P.S Thanks Miller
+</span>
+```
+{% endraw %}
+
+## 5. Post Indexer Widget
+
+TODO IMAGE
+
+Muzi comes with a widget to index posts, or anything else from a [collection](https://jekyllrb.com/docs/collections/). If a `title`, `description`, `pubdate` or `image` is present in the page's front matter this will be displayed
+
+{% raw %}
+
+1. Add the following code to the page (`.md` or `.html`)
+    ```html
+    {% include post_indexer.html %}
+    ```
+2. By default the indexer will display all posts from the `_posts` directory. If you want to display a different collection use the following code:
+    ```html
+    {% include post_indexer.html group=site.{{collection here}}%}
+    ```
+    This can also be used to only display a certain subset of posts, using the [slice filter](https://shopify.github.io/liquid/filters/slice/) or [pagination](https://jekyllrb.com/docs/pagination/).
+
+{% endraw %}
+
+## 6. Adding your own theme colors and styles
 
 1. Create a file called `/assets/css/style.scss` in your site's repository.
 2. Add the following code to the file:
@@ -115,7 +162,7 @@ To edit the menu override the `menu.html` include.
     - We'd recommend you choose a high saturation color for your theme color. `royalblue`, `red`, `violet` and `green` work well.
 4. Add you new styles or anything else (`@import` statements, mixins, etc) below the `@import` statement. See the [SASS guide](https://sass-lang.com/guide) for help.
 
-## 6. Cookie Consent
+## 7. Cookie Consent
 
 If your site serves cookies to viewers in the EU, its a legal requirement that you notify your users of this ([see more](https://cookiesandyou.com/)). Muzi makes this easy for you, using the [cookie consent tool by Insites](https://cookieconsent.insites.com/). Simply add the following line to your `_config.yml` file:
 
@@ -129,7 +176,7 @@ cookie_message: We use cookies to feed everyone # Disclaimer: Don't actually put
 cookie_link: /cookie_policy/
 ```
 
-## 7. Google Analytics
+## 8. Google Analytics
 
 Using Google Analytics? We've got you covered!
 

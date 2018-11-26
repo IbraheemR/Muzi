@@ -1,40 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:700|PT+Serif|Chakra+Petch:500');
 
-// Breakpoints
-$large-breakpoint: 64em !default;
-$medium-breakpoint: 42em !default;
-
-@mixin large {
-  @media screen and (min-width: #{$large-breakpoint}) {
-    @content;
-  }
-}
-
-@mixin medium {
-  @media screen and (min-width: #{$medium-breakpoint}) and (max-width: #{$large-breakpoint}) {
-    @content;
-  }
-}
-
-@mixin small {
-  @media screen and (max-width: #{$medium-breakpoint}) {
-    @content;
-  }
-}
-
-@mixin smallmed {
-  @include small {@content;}
-  @include medium {@content;}
-}
-
-@mixin medlarge {
-  @include medium {@content;}
-  @include large {@content;}
-}
-
 @import 'normalize';
 @import 'variables';
 @import 'md-styles';
+@import 'post-viewer';
 
 * {
   box-sizing: border-box;
@@ -76,8 +45,8 @@ body {
 
 .space {
   font-family: $header-font;
-  color: white;
-  background-color: black;
+  color: $topbar-fg;
+  background-color: $topbar-bg;
 
   // Transition for menu open
   @include small {
@@ -120,27 +89,39 @@ body {
 
     @include menu-transition;
 
+    .menuitem {
+      text-decoration: none;
+      color: $topbar-fg;
+
+      padding: 0 0 0 1rem;
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+
+    .right {
+      float: right;
+    }
+
     @include small {
       width: calc(100% - #{$title-height});
 
       top: 0;
       left: calc(-100% + #{$title-height});
 
-      border-top: $topbar-height solid black;
+      border-top: $topbar-height solid $topbar-bg;
 
       .menuitem {
         display: block;
 
         font-size: 2rem;
         padding: 1rem 0 1rem 1rem !important;
+      }
 
-        &.right {
-          float: left !important;
-          padding: 1rem 0 1rem 1rem !important;
-
-          position: absolute;
-          bottom: 0;
-        }
+      .right {
+        position: absolute;
+        bottom: 0;
       }
     }
 
@@ -150,23 +131,6 @@ body {
       top: 0;
       left: $topbar-height;
     }
-
-    .menuitem {
-      text-decoration: none;
-      color: white;
-
-      padding: 0 0 0 1rem;
-
-      &:hover {
-        color: $theme-color;
-      }
-
-      &.right {
-        float: right;
-        padding: 0 1rem 0 0;
-      }
-    }
-
   }
 
   &#title {
@@ -234,15 +198,21 @@ body {
     grid-area: content;
     padding: 1rem;
 
+    color: $content-fg;
+    background-color: $content-bg;
+
     @include small {
       @include menu-transition;
     }
 
     @include medlarge {
-      border-left: $topbar-height solid black;
+      border-left: $topbar-height solid $topbar-bg;
     }
 
-    color: $content-fg;
-    background-color: $content-bg;
+    .footer {
+      .right {
+        float: right;
+      }
+    }
   }
 }

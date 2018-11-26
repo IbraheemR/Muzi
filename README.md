@@ -19,6 +19,6 @@ remote_theme: IbraheemR/Muzi
 
 Make sure there is no other `theme` or `remote_theme` value set.
 
-## Customixation
+## Customization
 
 See the [customization guide](https://muzi.ibraheemrodrigues.com/customize/) to learn how to change the logo, menu and much more.

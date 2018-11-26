@@ -1,0 +1,47 @@
+.postcard {
+  margin: 0 auto;
+  max-width: $medium-breakpoint;
+
+  display: grid;
+
+  grid-gap: 0.5rem;
+
+  grid-template-columns: auto 1fr;
+  grid-template-areas: 
+  "title date"
+  "description description";
+
+  &.hasimage {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 
+    "title title date"
+    "image description description";
+  }
+  
+  .posttitle {
+    font-size: 1.5em;
+    font-family: $header-font;
+
+    grid-area: title;
+
+    color: $theme-color;
+  }
+  .postdate { 
+    font-family: $header-font;
+    justify-self: end;
+
+    grid-area: date;
+  }
+  .postimage {
+    width: 100%;
+    max-width: 10rem;
+    height: 10rem;
+
+    grid-area: image;
+    object-fit: cover;
+  }
+  .postdescription {
+    grid-area: description;
+    font-size: 1.2em;
+  }
+}

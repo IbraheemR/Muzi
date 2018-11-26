@@ -1,0 +1,16 @@
+{% assign post_set = include.group | default: site.posts %}
+{% for post in post_set %}
+
+{% assign desc = post.description | markdownify | remove: "<p>" | remove: "</p>" %}
+
+  <span class="postcard {%if post.image %} hasimage {% endif %}">
+    <a class="posttitle invisilink" href="{{ post.url }}">{{post.title}}</a>
+    <span class="postdate">{{post.pubdate | date: "%a, %b %d, %Y"}}</span>
+    <span class="postdescription">{{desc}}</span>
+
+    {%- if post.image -%}
+      <img class="postimage" src="{{ post.image }}" alt="">
+    {%- endif -%}
+  </span>
+
+{% endfor %}

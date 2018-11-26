@@ -64,12 +64,24 @@
   <div class="space" id="menu">{%- include menu.html -%}</div>
 
   <div class="space {% unless site.noflowtext %}flowtext{% endunless %}" id="content">
-    {%- if page.description -%}
-      <i>{{ page.description }}</i>
-      <hr>
-    {%- endif -%}
+      {%- if page.pubdate -%}
+        <span class="date">{{post.pubdate | date: "%a, %b %d, %Y"}}</span>
+      {%- endif -%}
+      
+      {%- if page.description -%}
+        <i>{{ page.description }}</i>
+      {%- endif -%}
+
+      {%- if page.description or page.pubdate -%}
+        <hr>
+      {%- endif -%}
 
     {{ content }}<br>
+
+    <hr>
+    <div class="footer">
+      {% include footer.html %}
+    </div>
   </div>
 
   <script src="/assets/muzi.js" async></script>

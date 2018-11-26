@@ -25,7 +25,7 @@ Paragraphs are automatically created. Just seperate text by a blank line!
 
 Muzi automatically scales text based on the size of you screen for easier reading (_Shhhh we stole this from [Materialize](https://materializecss.com/typography.html#flow) but its MIT licensed so its fine_)
 
-Muzi comes with a 404 page for things that [don't exist](/this-doesnt-exist)
+Muzi comes with a 404 page for things that [don't exist](/this-doesnt-exist) and a built-in post [indexing widget](/customize/#6-cookie-consent).
 
 SEO stuff is all taken care of with the [Jekyll SEO tag](https://github.com/jekyll/jekyll-seo-tag)
 

@@ -1,8 +1,8 @@
 // Based off of https://github.com/richleland/pygments-css/blob/master/monokai.css
 .highlight {
 
-  color: white;
-  background-color: black;
+  color: $topbar-fg;
+  background-color: $topbar-bg;
 
   pre {padding: 1em;}  
 
