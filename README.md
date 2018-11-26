@@ -1,6 +1,6 @@
 # Muzi
 
-[https://muzi.ibraheemrodirgues.com](https://muzi.ibraheemrodirgues.com)
+[https://muzi.ibraheemrodirgues.com](https://muzi.ibraheemrodrigues.com)
 
 Muzi is a **mobile first** theme for your Jekyll/GitHub Pages website. It bundles everything you'd expect from any Jekyll website plus:
 
